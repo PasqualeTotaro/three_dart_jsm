@@ -33,8 +33,7 @@ class EffectComposer {
       _width = size.width.toInt();
       _height = size.height.toInt();
 
-      renderTarget = WebGLRenderTarget(
-          (_width * _pixelRatio).toInt(), (_height * _pixelRatio).toInt(), WebGLRenderTargetOptions(parameters));
+      renderTarget = WebGLRenderTarget((_width * _pixelRatio).toInt(), (_height * _pixelRatio).toInt(), WebGLRenderTargetOptions(parameters));
     } else {
       _pixelRatio = 1;
       _width = renderTarget.width;
@@ -66,7 +65,7 @@ class EffectComposer {
 
   addPass(pass) {
     passes.add(pass);
-    pass.setSize(_width * _pixelRatio, _height * _pixelRatio);
+    pass.setSize((_width * _pixelRatio).toInt(), (_height * _pixelRatio).toInt());
   }
 
   insertPass(pass, index) {
